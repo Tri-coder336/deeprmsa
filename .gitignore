@@ -19,3 +19,7 @@ BP.dat
 BP_smoke_test.png
 *.dat
 !Src_Dst_Paths.dat
+reproduce_fig7/fig7_reproduction_partial.png
+reproduce_fig7/pilot_ksp_ff_10000.csv
+reproduce_fig7/pilot_sp_ff_10000.csv
+reproduce_fig7/RUN_STATUS.md
