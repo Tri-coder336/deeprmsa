@@ -23,6 +23,27 @@ baseline script can produce SP-FF (K=1) and KSP-FF (K=5) curves. Therefore, a
 plot from these scripts must be labelled a partial reproduction, not a full
 reproduction of all four curves in paper Fig. 7.
 
+## Results recorded so far
+
+This isolated copy adds a paper-oriented experiment configuration, repeatable
+SP-FF/KSP-FF benchmark CSVs, and a plotting script to the original source. It
+does not add a new DeepRMSA algorithm. The raw FLX training log and preview PNG
+are excluded from Git by the parent `.gitignore`; the FLX figures below are a
+snapshot for progress reporting, not a final evaluation.
+
+| Method | Mean blocking probability | Simulation coverage | Status |
+| --- | ---: | ---: | --- |
+| SP-FF | 0.1282678 | 5,000,000 requests (500 samples) | Complete |
+| KSP-FF | 0.0511504 | 5,000,000 requests (500 samples) | Complete |
+| DeepRMSA-FLX | Latest logged episode: 0.046; mean of the latest 10 logged episodes: 0.0515 | 270,000 requests logged out of a 5,000,000-request target | In progress; not a final/converged result |
+| DeepRMSA-EP | — | — | No separately verified implementation available in this source |
+
+The FLX snapshot is based on `BP.dat` as checked on 2026-11-24 17:37 local
+time. Values can change if training continues. The complete SP-FF and KSP-FF
+curves are in [`sp_ff_curve.csv`](sp_ff_curve.csv) and
+[`ksp_ff_curve.csv`](ksp_ff_curve.csv). Recreate the available-curve plot with
+`python plot_fig7.py`; it writes `fig7_reproduction_partial.png` locally.
+
 ## Full run commands (PowerShell)
 
 Run from this directory in separate PowerShell sessions. Full training is

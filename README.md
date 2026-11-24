@@ -12,6 +12,7 @@ Mã nguồn mô phỏng bài toán **Routing and Spectrum Assignment (RSA)** tro
 - [Chạy huấn luyện](#chạy-huấn-luyện)
 - [Chạy benchmark](#chạy-benchmark)
 - [Tham số chính](#tham-số-chính)
+- [Tái lập Fig. 7](#tái-lập-fig-7)
 - [Kết quả đầu ra](#kết-quả-đầu-ra)
 - [Lưu ý](#lưu-ý)
 - [Nguồn và ghi nhận](#nguồn-và-ghi-nhận)
@@ -102,6 +103,21 @@ Các thiết lập hiện nằm trực tiếp trong `Deep_RMSA_A3C.py` và scrip
 - `num_agents`: số worker, bị giới hạn bởi `max_cpu`.
 - `nonuniform`: chọn phân phối lưu lượng không đồng đều nếu bật.
 - `k_path`: số đường ứng viên dùng trong quyết định định tuyến.
+
+## Tái lập Fig. 7
+
+Thư mục [`reproduce_fig7/`](reproduce_fig7/README_FIG7.md) là bản sao thí nghiệm riêng, giữ nguyên source gốc và bổ sung cấu hình NSFNET theo bài báo, script vẽ Fig. 7 cùng dữ liệu benchmark SP-FF/KSP-FF. Đây là phần bổ sung quy trình tái lập và kết quả thí nghiệm, không phải một thuật toán DeepRMSA mới.
+
+Kết quả benchmark hiện có (mỗi đường mô phỏng 5.000.000 yêu cầu):
+
+| Thuật toán | Blocking Probability trung bình | Trạng thái |
+| --- | ---: | --- |
+| SP-FF | 0,1282678 | Hoàn tất |
+| KSP-FF | 0,0511504 | Hoàn tất |
+| DeepRMSA-FLX | 0,046 ở điểm log mới nhất | Chưa hoàn tất; log mới nhất có 270 episode (~270.000 yêu cầu) |
+| DeepRMSA-EP | — | Chưa có implementation đã xác minh trong source hiện có |
+
+DeepRMSA-FLX có số liệu giữa chừng; không nên xem điểm BP mới nhất là kết quả cuối hoặc bằng chứng hội tụ. Hướng dẫn, cấu hình, CSV và giới hạn tái lập được ghi trong [README_FIG7.md](reproduce_fig7/README_FIG7.md). Script tạo hình là [`plot_fig7.py`](reproduce_fig7/plot_fig7.py); hình xem trước và log FLX đang bị loại khỏi Git qua `.gitignore`.
 
 ## Kết quả đầu ra
 
