@@ -1,0 +1,21 @@
+# Python environments and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# IDE and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# TensorBoard event files
+train_agent_*/
+
+DeepRMSA/
+Bao_cao_thay_doi_va_chay_thu_DeepRMSA.docx
+BP.dat
+BP_smoke_test.png
+*.dat
+!Src_Dst_Paths.dat
